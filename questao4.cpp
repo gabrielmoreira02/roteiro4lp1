@@ -11,7 +11,7 @@ int main(){
 	cout << "Enquete: Quem foi o melhor jogador?"<<endl;
 
 	while (true){
-		cout << "Numero do jogador? (Para encerrar, digite 0)  ";
+		cout << "Numero do jogador (0=fim):  ";
 		cin >> voto;
 
 		if (voto==0){
@@ -39,6 +39,10 @@ int main(){
 		}
 	}
 
+	if (count==0){  							// ACONTECE APENAS SE TODOS OS VOTOS COMPUTADOS FOREM INVALIDOS
+		cout<<"Erro: nenhum voto computado"<<endl;
+		return 0;
+	}
 	cout << "O melhor jogador foi o numero "<<maisvotado<<",com "<<votosmaisvotado<<"votos, correspondendo a "<<votosmaisvotado*100/count<< "% do total de votos"<<endl;
 
 
